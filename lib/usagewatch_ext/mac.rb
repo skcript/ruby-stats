@@ -34,6 +34,7 @@ module Usagewatch
       parts = line.split(" ")
       totaldiskavailable = parts[3].to_i
     end
+    totaldiskavailable
   end
 
   # Show disk space available on location(partition) in GB
