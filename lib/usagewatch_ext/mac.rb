@@ -28,13 +28,12 @@ module Usagewatch
 
   # Show disk space available in GB
   def self.uw_diskavailable
+    totaldiskavailable = 0
     df = `df -h`
     df.split("\n")[1..-1].each do |line|
       parts = line.split(" ")
-      @totaldiskavailable = parts[3].to_i
-      puts totaldiskavailable
+      totaldiskavailable = parts[3].to_i
     end
-    totaldiskavailable
   end
 
   # Show disk space available on location(partition) in GB
