@@ -12,13 +12,17 @@ module Usagewatch
   end
 
   def self.uw_diskavailable
-    df = `df -h`
-    df.split("\n")[1..-1].each do |line|
-      parts = line.split(" ")
-      totaldiskavailable = parts[3].to_i
-  	end
+    f = `df -kl`
+    sum = 0.00
+    df.each_line.with_index do |line, line_index|
+      next if line_index.eql? 0
+      line = line.split(" ")
+      next if line[0] =~ /localhost/  #ignore backup filesystem
+      sum += ((line[2].to_f)/1024)/1024
+    end
+    sum.round(2)
   end
-
+  
   # Show the percentage of disk used.
   def self.uw_diskused_perc
     df = `df --total`
