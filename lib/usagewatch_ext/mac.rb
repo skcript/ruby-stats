@@ -32,7 +32,8 @@ module Usagewatch
     df = `df -h`
     df.split("\n")[1..-1].each do |line|
       parts = line.split(" ")
-      return totaldiskavailable = parts[3].to_i
+      totaldiskavailable = parts[3].to_i
+      return totaldiskavailable
     end
   end
 
