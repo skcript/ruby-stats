@@ -32,6 +32,7 @@ module Usagewatch
     df.split("\n")[1..-1].each do |line|
       parts = line.split(" ")
       @totaldiskavailable = parts[3].to_i
+      puts totaldiskavailable
     end
     totaldiskavailable
   end
