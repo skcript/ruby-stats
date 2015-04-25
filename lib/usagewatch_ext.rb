@@ -9,6 +9,7 @@ module UsagewatchExt
   elsif OS.include? "linux"
     require "usagewatch/linux"
     require "usagewatch_ext/linux"
+    require "usagewatch_ext/skcript_linux"
     UsagewatchExt = Usagewatch
   elsif OS =~ /cygwin|mswin|mingw|bccwin|wince|emx/
     puts "Windows" + text
