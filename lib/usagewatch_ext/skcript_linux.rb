@@ -18,7 +18,7 @@ module Usagewatch
       next if line_index.eql? 0
       line = line.split(" ")
       next if line[0] =~ /localhost/  #ignore backup filesystem
-      sum += ((line[2].to_f)/1024)/1024
+      sum += ((line[3].to_f)/1024)/1024
     end
     totaldiskavailable = sum.round(2)
   end
