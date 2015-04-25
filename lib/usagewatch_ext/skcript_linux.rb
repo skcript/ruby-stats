@@ -12,7 +12,7 @@ module Usagewatch
   end
 
   def self.uw_diskavailable
-    f = `df -kl`
+    df = `df -kl`
     sum = 0.00
     df.each_line.with_index do |line, line_index|
       next if line_index.eql? 0
