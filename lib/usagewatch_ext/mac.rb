@@ -36,7 +36,7 @@ module Usagewatch
       next if line[0] =~ /localhost/  #ignore backup filesystem
       sum += ((line[2].to_f)/1024)/1024
     end
-    sum.round(2)
+    totaldiskavailable = sum.round(2)
   end
 
   # Show disk space available on location(partition) in GB

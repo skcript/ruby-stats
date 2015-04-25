@@ -20,9 +20,9 @@ module Usagewatch
       next if line[0] =~ /localhost/  #ignore backup filesystem
       sum += ((line[2].to_f)/1024)/1024
     end
-    sum.round(2)
+    totaldiskavailable = sum.round(2)
   end
-  
+
   # Show the percentage of disk used.
   def self.uw_diskused_perc
     df = `df --total`
