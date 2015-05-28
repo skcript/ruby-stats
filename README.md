@@ -1,4 +1,5 @@
 # ruby-stats
+![A part of our Admin Panel that we use internally](https://cloud.githubusercontent.com/assets/973265/7853394/2e0b03b6-052b-11e5-97cf-7c330eaa78e6.png)
 
 ## DESCRIPTION:
 Ruby Stats helps you get your system statistics whenever you need it. We use it internally to monitor our Servers and send it to our monitoring servers in the cloud. This Gem currently supports Ubuntu and Mac. Unfortunately we have no plans to bring it for Windows.
