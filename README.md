@@ -1,20 +1,15 @@
-[![Coverage Status](https://coveralls.io/repos/rderoldan1/usagewatch_ext/badge.png)](https://coveralls.io/r/rderoldan1/usagewatch_ext)
-[![Gem Version](https://badge.fury.io/rb/usagewatch_ext.png)](http://badge.fury.io/rb/usagewatch_ext)
-[![Build Status](https://travis-ci.org/rderoldan1/usagewatch_ext.png?branch=master)](https://travis-ci.org/rderoldan1/usagewatch_ext)
-[![Code Climate](https://codeclimate.com/github/rderoldan1/usagewatch_ext.png)](https://codeclimate.com/github/rderoldan1/usagewatch_ext)
-
-# usagewatch extended version
-
-License: (MIT) Copyright (C) 2013 Authors Ruben Espinosa, Phil Chen.
+# ruby-stats
 
 ## DESCRIPTION:
-This project is based in [Usagewatch](https://github.com/nethacker/usagewatch) gem written by Phil Chen, I try to expand the OS support, first with mac OS,
-in future versions Windows will be include.
+Ruby Stats helps you get your system statistics whenever you need it. We use it internally to monitor our Servers and send it to our monitoring servers in the cloud. This Gem currently supports Ubuntu and Mac. Unfortunately we have no plans to bring it for Windows.
 
-Also I am writing a testing library for the original gem.
-
-This is Ruby Gem with methods to find usage statistics on your system such as CPU, Disk, TCP/UDP Connections, Load,
-Bandwidth, Disk I/O, and Memory, top processes by memory and cpu consumption
+Here are some of the statistics you can get about your system:
+- CPU Usage
+- CPU load
+- Memory Usage
+- Disk Statistics (Free Space, etc)
+- TCP/UDP Packet Exchanges 
+- Gets some data about the processes that are running
 
 ## Getting Started
 
@@ -84,9 +79,6 @@ Top Ten Processes By CPU Consumption: [["PluginProcess", "9.0"], ["WindowServer"
 Top Ten Processes By Memory Consumption: [["WebProcess", "8.3"], ["rubymine", "6.4"], ["Safari", "2.0"], ["iPhoto", "1.8"], ["Mail", "1.7"], ["mds", "1.6"], ["ruby", "1.5"], ["WindowServer", "1.3"], ["PluginProcess", "1.2"], ["GitHub", "1.1"]]
 ```
 
-Simple sinatra app for monitoring your server
-https://github.com/rderoldan1/ServerMonit
-
 ## Methods available
 
 ##### Linux
@@ -154,12 +146,21 @@ https://github.com/rderoldan1/ServerMonit
 
 * HTTP Conns is the number of connections on 80 port
 
+## TODO
+- Open Source our internal Rails based Dashboard to monitor a server
+- More Realtime data updates
+- API to send data to Sensu/Graphite directly
 
 ## Tested Using
 
-RUBY VERSIONS:
-ruby 1.9.3p429 (2013-05-15) [x86_64-linux]
-ruby 2.0
+**RUBY VERSIONS:**
+- ruby 1.9.3p429 (2013-05-15) [x86_64-linux]
+- ruby 2.0
+- ruby 2.1.5
 
-OS VERSIONS:
-CENTOS 5x 6x, Ubuntu 12.04, Fedora 18, Mountain Lion 10.8.4
+**TESTED OS VERSIONS:**
+- Ubuntu 14.04
+- Mac OS 10.x
+
+## Credits
+Thanks to Ruben Espinosa, Phil Chen for the wonderful [Usagewatch](https://github.com/nethacker/usagewatch) gem.
