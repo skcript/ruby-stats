@@ -165,3 +165,31 @@ Top Ten Processes By Memory Consumption: [["WebProcess", "8.3"], ["rubymine", "6
 
 ## Credits
 Thanks to Ruben Espinosa, Phil Chen for the wonderful [Usagewatch](https://github.com/nethacker/usagewatch) gem.
+
+Getting Help
+------------
+
+We spent about 40% of our time contributing to Open Source software. That's one of our goals for this year. Please [tweet](https://twitter.com/skcriptd) us with any queries you have. 
+
+License
+-------
+
+ruby-stats is Copyright (c) 2015 Skcript. It is free software, and may be
+redistributed under the terms specified in the [LICENSE] file.
+
+[LICENSE]: /LICENSE
+
+
+About
+-----
+
+![Skcript](http://www.skcript.com/static/skcript_norm.png)
+
+ruby-stats is maintained and funded by Skcript. The names and logos for
+Skcript are properties of Skcript.
+
+We love open source, and we have been doing quite a bit of contributions to the community. Take a look at them [here][skcriptoss]. Also, encourage people around us to get involved in community [operations][community]. [Join us][hiring], if you'd like to see the world change from our HQ.
+
+[skcriptoss]: http://skcript.github.io/
+[community]: http://www.skcript.com/community?utm_source=github
+[hiring]: http://www.skcript.com/careers?utm_source=github
