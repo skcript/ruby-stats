@@ -1,0 +1,219 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Ruby-stats by skcript</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Ruby-stats</h1>
+        <p>Fetch statistics about your machine using Ruby</p>
+
+        <p class="view"><a href="https://github.com/skcript/ruby-stats">View the Project on GitHub <small>skcript/ruby-stats</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/skcript/ruby-stats/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/skcript/ruby-stats/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/skcript/ruby-stats">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="ruby-stats" class="anchor" href="#ruby-stats" aria-hidden="true"><span class="octicon octicon-link"></span></a>ruby-stats</h1>
+
+<p><img src="https://cloud.githubusercontent.com/assets/973265/7853394/2e0b03b6-052b-11e5-97cf-7c330eaa78e6.png" alt="A part of our Admin Panel that we use internally"></p>
+
+<h2>
+<a id="description" class="anchor" href="#description" aria-hidden="true"><span class="octicon octicon-link"></span></a>DESCRIPTION:</h2>
+
+<p>Ruby Stats helps you get your system statistics whenever you need it. We use it internally to monitor our Servers and send it to our monitoring servers in the cloud. This Gem currently supports Ubuntu and Mac. Unfortunately we have no plans to bring it for Windows.</p>
+
+<p>Here are some of the statistics you can get about your system:</p>
+
+<ul>
+<li>CPU Usage</li>
+<li>CPU load</li>
+<li>Memory Usage</li>
+<li>Disk Statistics (Free Space, etc)</li>
+<li>TCP/UDP Packet Exchanges </li>
+<li>Gets some data about the processes that are running</li>
+</ul>
+
+<h2>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting Started</h2>
+
+<p>gem install usagewatch_ext</p>
+
+<div class="highlight highlight-ruby"><pre><span class="pl-k">require</span> <span class="pl-s"><span class="pl-pds">'</span>usagewatch_ext<span class="pl-pds">'</span></span>
+
+usw <span class="pl-k">=</span> <span class="pl-c1">Usagewatch</span>
+
+usw.uw_diskused
+usw.uw_diskused_perc
+usw.uw_cpuused
+usw.uw_tcpused
+usw.uw_udpused
+usw.uw_memused
+usw.uw_load
+usw.uw_bandrx
+usw.uw_bandtx
+usw.uw_diskioreads
+usw.uw_diskiowrites
+usw.uw_cputop
+usw.uw_memtop
+usw.uw_apacheconns</pre></div>
+
+<h2>
+<a id="example" class="anchor" href="#example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example</h2>
+
+<div class="highlight highlight-bash"><pre>Run:
+
+linux_example.rb
+
+Example Output:
+
+11.56 Gigabytes Disk Used
+7.0% Disk Used
+0.25% CPU Used
+30 TCP Connections Used
+0 UDP Connections Used
+43% Active Memory Used
+0.01 Average System Load Of The Past Minute
+0.008 Mbit/s Current Bandwidth Received
+0.2 Mbit/s Current Bandwidth Transmitted
+0/s Current Disk Reads Completed
+2/s Current Disk Writes Completed
+Top Ten Processes By CPU Consumption:
+[[<span class="pl-s"><span class="pl-pds">"</span>/usr/lib64/erlang/erts-5.8.5/bin/beam.smp<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>5.2<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>ruby<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>4.1<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>ps<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>2.0<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>abrt-dump-oops<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>0.8<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>aoe_ktio<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>0.7<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>aoe_tx<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>0.4<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>ata_sff<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>0.2<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>auditd<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>0.1<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>awk<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>0.1<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>-bash<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>0.1<span class="pl-pds">"</span></span>]]
+Top Ten Processes By Memory Consumption:
+[[<span class="pl-s"><span class="pl-pds">"</span>unicorn<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>4.8<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>unicorn<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>4.7<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>unicorn<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>4.6<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>unicorn<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>4.6<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>unicorn<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>4.5<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>unicorn<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>4.5<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>unicorn<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>4.3<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>unicorn<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>4.3<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>unicorn<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>4.2<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>/usr/lib64/erlang/erts-5.8.5/bin/beam.smp<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>4.0<span class="pl-pds">"</span></span>]]</pre></div>
+
+<div class="highlight highlight-bash"><pre>Run:
+
+mac_example.rb
+
+Example Output:
+
+Mac version is under development
+92.8 Gigabytes Used
+24.96 Percentage of Gigabytes Used
+71.47% Active Memory Used
+7.69% CPU Used
+1.19 Average System Load Of The Past Minute
+Top Ten Processes By CPU Consumption: [[<span class="pl-s"><span class="pl-pds">"</span>PluginProcess<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>9.0<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>WindowServer<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>2.7<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>iPhoto<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>1.2<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>Terminal<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>1.0<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>rubymine<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>0.5<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>SystemUIServer<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>0.1<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>(scanunit)<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>0.0<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>(scanunit)<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>0.0<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>(scanunit)<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>0.0<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>(scanunit)<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>0.0<span class="pl-pds">"</span></span>]]
+Top Ten Processes By Memory Consumption: [[<span class="pl-s"><span class="pl-pds">"</span>WebProcess<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>8.3<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>rubymine<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>6.4<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>Safari<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>2.0<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>iPhoto<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>1.8<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>Mail<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>1.7<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>mds<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>1.6<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>ruby<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>1.5<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>WindowServer<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>1.3<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>PluginProcess<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>1.2<span class="pl-pds">"</span></span>], [<span class="pl-s"><span class="pl-pds">"</span>GitHub<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>1.1<span class="pl-pds">"</span></span>]]</pre></div>
+
+<h2>
+<a id="methods-available" class="anchor" href="#methods-available" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methods available</h2>
+
+<h5>
+<a id="linux" class="anchor" href="#linux" aria-hidden="true"><span class="octicon octicon-link"></span></a>Linux</h5>
+
+<pre><code>uw_diskused
+uw_diskused_on(location)
+uw_diskused_perc
+uw_diskavailable
+uw_diskavailable_on(location)
+uw_cpuused
+uw_tcpused
+uw_udpused
+uw_memused
+uw_load
+uw_bandrx
+uw_bandtx
+uw_diskioreads
+uw_diskiowrites
+uw_cputop
+uw_memtop
+uw_httpconns
+</code></pre>
+
+<h5>
+<a id="mac" class="anchor" href="#mac" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mac</h5>
+
+<pre><code>uw_diskused
+uw_diskused_on(location)
+uw_diskused_perc
+uw_diskavailable
+uw_diskavailable_on(location)
+uw_cputop
+uw_memtop
+uw_load
+uw_cpuused
+uw_memused
+uw_httpconns
+uw_bandrx
+uw_bandtx
+</code></pre>
+
+<h2>
+<a id="notes" class="anchor" href="#notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes</h2>
+
+<ul>
+<li><p>Disk Used is a sum of all partitions calculated in Gigabytes</p></li>
+<li><p>Disk Used Percentage is a total percentage of all disk partitions used</p></li>
+<li><p>Disk Used On is disk space used on the location passed calculated in Gigabytes, returns "location invalid" if invalid location passed</p></li>
+<li><p>Disk Available is a sum of all partitions calculated in Gigabytes</p></li>
+<li><p>Disk Available On is disk space available on the location passed calculated in Gigabytes, returns "location invalid" if invalid location passed</p></li>
+<li><p>CPU Used is a percentage of current CPU being used</p></li>
+<li><p>TCP/UDP Connections Used is a total count of each respectively</p></li>
+<li><p>Active Memory Used is a percentage of active system memory being used</p></li>
+<li><p>Load is the average load of the past minute</p></li>
+<li><p>Bandwidth is current received and transmitted in Megabits</p></li>
+<li><p>Disk IO is current disk reads and writes completed per second</p></li>
+<li><p>Top Ten Processes By CPU Consumption are based on percent CPU used</p></li>
+<li><p>Top Ten Processes By Memory Consumption are base on percent Memory used</p></li>
+<li><p>HTTP Conns is the number of connections on 80 port</p></li>
+</ul>
+
+<h2>
+<a id="todo" class="anchor" href="#todo" aria-hidden="true"><span class="octicon octicon-link"></span></a>TODO</h2>
+
+<ul>
+<li>Open Source our internal Rails based Dashboard to monitor a server</li>
+<li>More Realtime data updates</li>
+<li>API to send data to Sensu/Graphite directly</li>
+</ul>
+
+<h2>
+<a id="tested-using" class="anchor" href="#tested-using" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tested Using</h2>
+
+<p><strong>RUBY VERSIONS:</strong></p>
+
+<ul>
+<li>ruby 1.9.3p429 (2013-05-15) [x86_64-linux]</li>
+<li>ruby 2.0</li>
+<li>ruby 2.1.5</li>
+</ul>
+
+<p><strong>TESTED OS VERSIONS:</strong></p>
+
+<ul>
+<li>Ubuntu 14.04</li>
+<li>Mac OS 10.x</li>
+</ul>
+
+<h2>
+<a id="credits" class="anchor" href="#credits" aria-hidden="true"><span class="octicon octicon-link"></span></a>Credits</h2>
+
+<p>Thanks to Ruben Espinosa, Phil Chen for the wonderful <a href="https://github.com/nethacker/usagewatch">Usagewatch</a> gem.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/skcript">skcript</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
